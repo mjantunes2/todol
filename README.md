@@ -44,5 +44,5 @@ $ npm i
 $ npm start
 ```
 
-## 💻 **Contato do Desenvolvedore**
+## 💻 **Contato do Desenvolvedor**
 - [Murilo J. Antunes](https://www.linkedin.com/in/murilo-antunes-bb1143228/)

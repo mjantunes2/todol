@@ -22,7 +22,7 @@ v16.14.0
 
 ## 🚀 **Como Utilizar?**
 
-É possível você utilizar o nosso projeto seguindos estes passos:
+É possível você utilizar esse projeto seguindo estes passos:
 
 - Utilize o Git Clone no repositório em uma pasta de sua escolha
 

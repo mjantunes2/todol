@@ -18,6 +18,7 @@ const Atividade = (props) => {
           onClick={() => props.onClick(props.resultado.id)}
         />
         <Checkbox
+          cursor={props.resultado.feito == null ? 'pointer' : 'default'}
           disabled={props.resultado.feito == null ? false : true}
           onChange={() => props.onChange(props.resultado.id)}
           className={styles.text_check}

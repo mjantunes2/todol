@@ -29,7 +29,7 @@ const CriarAtividade = () => {
   }
 
   return (
-    <Paper elevation={3} sx={{ width: 1 }} style={{ padding: "1em" }}>
+    <Paper elevation={3} sx={{ width: 1 }} style={{ padding: "1em", background: "#f5f5f5" }}>
       <div style={{ textAlign: "center" }}>
         <label className={style.text}>Lista de Atividades</label>
 
@@ -38,10 +38,13 @@ const CriarAtividade = () => {
           onChange={(event) => {
             setAtividade(event.target.value);
           }}
-          bgColor="white"
+          bgColor="#d3d3d3"
           fontWeight="medium"
           placeholder="Escreva sua Atividade"
           width='auto'
+          outline='none'
+          border='none'
+          borderRadius='3px'
         />
 
         <Button onClick={enviarAtividade} variant="text">

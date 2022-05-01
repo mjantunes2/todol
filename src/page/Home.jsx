@@ -1,7 +1,6 @@
-import { Container, List } from "@mui/material";
-import React, { useState } from "react";
+import { Container } from "@mui/material";
+import React from "react";
 import CriarAtividade from "../components/CriarAtividade";
-import TodoItem from "../components/TodoItem";
 import AtividadeLista from "../components/AtividadeLista";
 
 export default function Home() {

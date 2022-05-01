@@ -1,27 +1,27 @@
-import { Box, Heading, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Heading, useUpdateEffect, Wrap, WrapItem } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Atividade from "./Atividade";
+import { useRef } from "react";
 
 export default function AtividadeLista() {
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://api-to-do-list-test.herokuapp.com/atividade")
-      .then((response) => {
-        console.log(response);
-        setData(response.data.resultado);
-        console.log(response.data.resultado);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
   
+  useEffect(() => {
+      axios
+        .get("https://api-to-do-list-test.herokuapp.com/atividade")
+        .then((response) => {
+          setData(response.data.resultado);
+        })
+        .catch((error) => console.log(error));
+
+  });
 
   const onDelete = async (id) => {
     try {
-      await axios.delete(`https://api-to-do-list-test.herokuapp.com/atividade/${id}`);
+      await axios.delete(
+        `https://api-to-do-list-test.herokuapp.com/atividade/${id}`
+      );
 
       const newData = data.filter((resultado) => resultado.id !== id);
       setData(newData);

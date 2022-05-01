@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Input, Wrap, WrapItem } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
+import AtividadeLista from "./AtividadeLista";
 
 export default function NovaAtividade() {
   const [atividade, setAtividade] = useState("");
@@ -21,6 +22,8 @@ export default function NovaAtividade() {
       limparCampos();
 
       alert("Atividade enviada com sucesso");
+
+      AtividadeLista();
     } catch (error) {
       alert(error);
     }

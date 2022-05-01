@@ -1,7 +1,8 @@
-import { Box, Heading, Input, Wrap, WrapItem } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { TextField, Button, Paper } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 import axios from "axios";
+import style from "./style.module.css";
 
 const CriarAtividade = () => {
   const [atividade, setAtividade] = useState("");
@@ -28,24 +29,25 @@ const CriarAtividade = () => {
   }
 
   return (
-    <Paper style={{ padding: "1em" }}>
-      <Wrap w="33%" h="" direction="column">
-        <label>Nome da Atividade</label>
-        <WrapItem w="100%">
-          <Input
-            value={atividade}
-            onChange={(event) => {
-              setAtividade(event.target.value);
-            }}
-            bgColor="white"
-            fontWeight="medium"
-            placeholder="Nome da Atividade"
-          />
-        </WrapItem>
+    <Paper elevation={3} sx={{ width: 1 }} style={{ padding: "1em" }}>
+      <div style={{ textAlign: "center" }}>
+        <label className={style.text}>Lista de Atividades</label>
+
+        <Input
+          value={atividade}
+          onChange={(event) => {
+            setAtividade(event.target.value);
+          }}
+          bgColor="white"
+          fontWeight="medium"
+          placeholder="Escreva sua Atividade"
+          width='auto'
+        />
+
         <Button onClick={enviarAtividade} variant="text">
           Enviar
         </Button>
-      </Wrap>
+      </div>
     </Paper>
   );
 };

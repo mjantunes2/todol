@@ -1,12 +1,12 @@
-import { Box, Heading, useUpdateEffect, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Heading, Wrap, WrapItem } from "@chakra-ui/react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useParams} from "react";
 import Atividade from "./Atividade";
-import { useRef } from "react";
 
 export default function AtividadeLista() {
   const [data, setData] = useState([]);
-  
+  const finalizar = { atividade: 'feito'}
+
   useEffect(() => {
       axios
         .get("https://api-to-do-list-test.herokuapp.com/atividade")
@@ -30,6 +30,17 @@ export default function AtividadeLista() {
     }
   };
 
+  const onCheck = async (id) => {
+    try {
+      await axios.patch(
+        `https://api-to-do-list-test.herokuapp.com/atividade/${id}`, finalizar
+      );
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+
   return (
     <>
       <Wrap
@@ -47,17 +58,17 @@ export default function AtividadeLista() {
             textAlign="center"
             bg="grey.500"
             w="100%"
-            mt="70px"
-            mb="50px"
+            mt="-40px"
+            mb="10px"
           >
-            Atividades:
+            Lista de Atividades:
           </Heading>
         </Box>
         <WrapItem>
           <Wrap justify="center" w="100%">
             {data.map((resultado, index) => (
               <WrapItem key={resultado.id}>
-                <Atividade resultado={resultado} onClick={onDelete}></Atividade>
+                <Atividade resultado={resultado} onClick={onDelete} onChange={onCheck}></Atividade>
               </WrapItem>
             ))}
           </Wrap>

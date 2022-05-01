@@ -1,9 +1,9 @@
-import { Button, CloseButton,  } from "@chakra-ui/react";
-import { Checkbox, CheckboxGroup } from "@chakra-ui/react";
+import { CloseButton } from "@chakra-ui/react";
+import { Checkbox } from "@chakra-ui/react";
 import styles from "./style.module.css";
+import React from 'react';
 
 const Atividade = (props) => {
-
   return (
     <div className={styles.card_container}>
       <div className={styles.icons}>
@@ -18,7 +18,7 @@ const Atividade = (props) => {
 
       <div className={styles.card_titulo}>
         <h1>
-          <span>{props.resultado.atividade}</span>
+          <span>{props.resultado.atividade} {props.resultado.feito != null ? "- finalizado" : ""}</span>
         </h1>
       </div>
     </div>

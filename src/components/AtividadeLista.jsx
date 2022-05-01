@@ -1,11 +1,11 @@
 import { Box, Heading, Wrap, WrapItem } from "@chakra-ui/react";
 import axios from "axios";
-import React, { useEffect, useState, useParams} from "react";
+import React, { useEffect, useState } from "react";
 import Atividade from "./Atividade";
 
 export default function AtividadeLista() {
   const [data, setData] = useState([]);
-  const finalizar = { atividade: 'feito'}
+  const finalizar = { feito: 'feito'}
 
   useEffect(() => {
       axios
@@ -39,6 +39,8 @@ export default function AtividadeLista() {
       console.log(error);
     }
 
+    
+
   };
 
   return (
@@ -68,7 +70,7 @@ export default function AtividadeLista() {
           <Wrap justify="center" w="100%">
             {data.map((resultado, index) => (
               <WrapItem key={resultado.id}>
-                <Atividade resultado={resultado} onClick={onDelete} onChange={onCheck}></Atividade>
+                <Atividade resultado={resultado} onClick={onDelete} onChange={onCheck}></Atividade> 
               </WrapItem>
             ))}
           </Wrap>

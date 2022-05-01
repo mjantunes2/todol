@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { TextField, Button, Paper } from "@mui/material";
 import axios from "axios";
 
-const Form = () => {
+const CriarAtividade = () => {
   const [atividade, setAtividade] = useState("");
 
   function limparCampos() {
@@ -50,4 +50,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CriarAtividade;

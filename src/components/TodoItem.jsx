@@ -1,5 +1,4 @@
 import * as React from "react";
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -9,11 +8,12 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from '@mui/icons-material/DeleteForever';
 import { Paper } from '@mui/material';
 
-export default function TodoItem() {
+const ToDoItem = (props) =>{
   return (
     <Paper>
     <ListItem
       secondaryAction={
+        // Botão de deletar
         <IconButton edge="end" aria-label="comments">
           <DeleteIcon />
         </IconButton>
@@ -28,9 +28,11 @@ export default function TodoItem() {
             disableRipple
           />
         </ListItemIcon>
-        <ListItemText primary={`Line item`} />
+        <ListItemText primary={`atividade`} />
       </ListItemButton>
     </ListItem>
     </Paper>
   );
 }
+
+export default ToDoItem;

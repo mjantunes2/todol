@@ -18,7 +18,7 @@ $ node --version
 v16.14.0
 ```
 
-- [É possivel intalar o Node nesse link](https://nodejs.org/en/)
+- [É possivel instalar o Node nesse link](https://nodejs.org/en/)
 
 ## 🚀 **Como Utilizar?**
 

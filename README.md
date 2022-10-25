@@ -47,3 +47,4 @@ $ npm start
 ## 💻 **Contato dos Desenvolvedores**
 - [Murilo J. Antunes](https://www.linkedin.com/in/murilo-antunes-bb1143228/)
 - [Lana Eduarda Schimitez](https://www.linkedin.com/in/lanaschimitez/)
+ 
